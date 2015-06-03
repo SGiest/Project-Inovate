@@ -11,7 +11,8 @@ namespace WindowsFormsApplication2
     {
         public string status { get; set; }
         public string version { get; set; }
-        public List<SensorsResponse> response { get; set; }
+        public SensorsResponse response { get; set; }
+
         public static string Session { get; set; }
         public static string Serial { get; set; }
 
@@ -24,7 +25,7 @@ namespace WindowsFormsApplication2
                 var serial = Serial;
 
                 var myUri = new Uri(url);
-                var myWebRequest = WebRequest.Create(myUri + session + "/" + serial + "/swlist");
+                var myWebRequest = WebRequest.Create(myUri + session + "/" + serial + "/get-sensors");
                 var myHttpWebRequest = (HttpWebRequest) myWebRequest;
 
                 var myWebResponse = myWebRequest.GetResponse();
@@ -43,7 +44,7 @@ namespace WindowsFormsApplication2
                 var ip = AuthOffline.IP;
                 var pass = AuthOffline.Pass;
 
-                var myWebRequest = WebRequest.Create("http://" + ip + "/" + pass + "/swlist");
+                var myWebRequest = WebRequest.Create("http://" + ip + "/" + pass + "/get-sensors");
                 var myHttpWebRequest = (HttpWebRequest) myWebRequest;
 
                 var myWebResponse = myWebRequest.GetResponse();

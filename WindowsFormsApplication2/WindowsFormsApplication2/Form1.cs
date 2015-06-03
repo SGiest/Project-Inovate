@@ -66,11 +66,7 @@ namespace WindowsFormsApplication2
 
             Sensors sensor = Sensors.sensorlist();
 
-            int schBtnOnTop = 15;
-            int schBtnOnLeft = 120;
-            int schLblTop = 20;
-            int schLblLeft = 10;
-            foreach (var detail in sensor.response)
+            foreach (var detail in sensor.response.switches)
             {
                 if (detail.hue_id != null)
                 {
@@ -81,25 +77,20 @@ namespace WindowsFormsApplication2
                 }
                 else if (detail.id == 0)
                 {
-                    Label label = new Label
-                    {
-                        Top = schLblTop,
-                        Left = schLblLeft,
-                        Text = detail.name,
-                        Name = detail.id.ToString()
-                    };
-                    Console.WriteLine(label.Name);
-
-                    Button button = new Button
-                    {
-                        Top = schBtnOnTop,
-                        Left = schBtnOnLeft
-                    };
-                    this.Controls.Add(button);
-                }
+                    LblSch1.Text = detail.name;
+                    LblSch1.Name = detail.id.ToString();
+                };
+    
             }
+            foreach (var detail in sensor.response.thermometers)
+            {
+                label3.Text = detail.te.ToString();
+                label4.Text = detail.hu.ToString();
+            }
+             
         }
-        private void button3_Click(object sender, EventArgs e)
+
+        private void BtnHueOn1_Click(object sender, EventArgs e)
         {   // Author Sieger
             switch (CmbHue1.SelectedIndex)
             {
@@ -126,17 +117,30 @@ namespace WindowsFormsApplication2
                     break;
             }
         }
-        private void button4_Click(object sender, EventArgs e)
+
+        private void BtnHueOff1_Click(object sender, EventArgs e)
         {   // Author Sieger
             Control.controlHue(LblHue1.Name, "off", 0, 0, 0);
         }
-        private void Btn_Click(object sender, EventArgs e)
+
+        private void BtnSchon1_Click(object sender, EventArgs e)
         {   // Author Sieger
             Control.controlSchakelaar(LblSch1.Name, "on");
         }
+
         private void BtnSchOff1_Click(object sender, EventArgs e)
         {   // Author Sieger
             Control.controlSchakelaar(LblSch1.Name, "off");
+        }
+
+        private void BtnSchOn2_Click(object sender, EventArgs e)
+        {
+            Control.controlSchakelaar(LblSch2.Name, "on");
+        }
+
+        private void BtnSchOff2_Click(object sender, EventArgs e)
+        {
+            Control.controlSchakelaar(LblSch2.Name, "off");
         }
     }
 }

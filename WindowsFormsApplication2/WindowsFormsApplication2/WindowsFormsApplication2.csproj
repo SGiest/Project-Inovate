@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="AuthOffline.cs" />
     <Compile Include="AuthOnline.cs" />
+    <Compile Include="Camera.cs" />
     <Compile Include="Color.cs" />
     <Compile Include="Control.cs" />
     <Compile Include="Discover.cs" />
@@ -60,11 +61,15 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Hash.cs" />
+    <Compile Include="Hue.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="Sensors.cs" />
     <Compile Include="SensorsResponse.cs" />
+    <Compile Include="Switch.cs" />
+    <Compile Include="Thermometer.cs" />
+    <Compile Include="Url.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

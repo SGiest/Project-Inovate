@@ -37,6 +37,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.BtnSchOn2 = new System.Windows.Forms.Button();
+            this.LblSch2 = new System.Windows.Forms.Label();
+            this.BtnSchOff2 = new System.Windows.Forms.Button();
             this.BtnSchOn1 = new System.Windows.Forms.Button();
             this.BtnSchOff1 = new System.Windows.Forms.Button();
             this.LblSch1 = new System.Windows.Forms.Label();
@@ -45,13 +48,15 @@
             this.LblHue1 = new System.Windows.Forms.Label();
             this.CmbHue1 = new System.Windows.Forms.ComboBox();
             this.BtnHueOff = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.Login.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnConHW
@@ -125,6 +130,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -138,8 +144,9 @@
             // groupBox2
             // 
             this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.BtnSchOn2);
+            this.groupBox2.Controls.Add(this.LblSch2);
+            this.groupBox2.Controls.Add(this.BtnSchOff2);
             this.groupBox2.Controls.Add(this.BtnSchOn1);
             this.groupBox2.Controls.Add(this.BtnSchOff1);
             this.groupBox2.Controls.Add(this.LblSch1);
@@ -148,7 +155,36 @@
             this.groupBox2.Size = new System.Drawing.Size(200, 100);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Schakelaars";
+            this.groupBox2.Text = "Switches";
+            // 
+            // BtnSchOn2
+            // 
+            this.BtnSchOn2.Location = new System.Drawing.Point(119, 44);
+            this.BtnSchOn2.Name = "BtnSchOn2";
+            this.BtnSchOn2.Size = new System.Drawing.Size(35, 25);
+            this.BtnSchOn2.TabIndex = 22;
+            this.BtnSchOn2.Text = "ON";
+            this.BtnSchOn2.UseVisualStyleBackColor = true;
+            this.BtnSchOn2.Click += new System.EventHandler(this.BtnSchOn2_Click);
+            // 
+            // LblSch2
+            // 
+            this.LblSch2.AutoSize = true;
+            this.LblSch2.Location = new System.Drawing.Point(10, 50);
+            this.LblSch2.Name = "LblSch2";
+            this.LblSch2.Size = new System.Drawing.Size(61, 13);
+            this.LblSch2.TabIndex = 21;
+            this.LblSch2.Text = "Schakelaar";
+            // 
+            // BtnSchOff2
+            // 
+            this.BtnSchOff2.Location = new System.Drawing.Point(160, 45);
+            this.BtnSchOff2.Name = "BtnSchOff2";
+            this.BtnSchOff2.Size = new System.Drawing.Size(35, 25);
+            this.BtnSchOff2.TabIndex = 20;
+            this.BtnSchOff2.Text = "OFF";
+            this.BtnSchOff2.UseVisualStyleBackColor = true;
+            this.BtnSchOff2.Click += new System.EventHandler(this.BtnSchOff2_Click);
             // 
             // BtnSchOn1
             // 
@@ -158,7 +194,7 @@
             this.BtnSchOn1.TabIndex = 19;
             this.BtnSchOn1.Text = "ON";
             this.BtnSchOn1.UseVisualStyleBackColor = true;
-            this.BtnSchOn1.Click += new System.EventHandler(this.Btn_Click);
+            this.BtnSchOn1.Click += new System.EventHandler(this.BtnSchon1_Click);
             // 
             // BtnSchOff1
             // 
@@ -200,7 +236,7 @@
             this.BtnHueOn1.TabIndex = 1;
             this.BtnHueOn1.Text = "ON";
             this.BtnHueOn1.UseVisualStyleBackColor = true;
-            this.BtnHueOn1.Click += new System.EventHandler(this.button3_Click);
+            this.BtnHueOn1.Click += new System.EventHandler(this.BtnHueOn1_Click);
             // 
             // LblHue1
             // 
@@ -234,31 +270,42 @@
             this.BtnHueOff.TabIndex = 2;
             this.BtnHueOff.Text = "OFF";
             this.BtnHueOff.UseVisualStyleBackColor = true;
-            this.BtnHueOff.Click += new System.EventHandler(this.button4_Click);
+            this.BtnHueOff.Click += new System.EventHandler(this.BtnHueOff1_Click);
             // 
-            // button1
+            // groupBox3
             // 
-            this.button1.Location = new System.Drawing.Point(160, 45);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(35, 25);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "OFF";
-            this.button1.UseVisualStyleBackColor = true;
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Location = new System.Drawing.Point(6, 112);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(200, 100);
+            this.groupBox3.TabIndex = 17;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Thermometer";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 50);
+            this.label3.Location = new System.Drawing.Point(10, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "Schakelaar";
+            this.label3.Size = new System.Drawing.Size(67, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Current temp";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 38);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Current Hum";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 261);
+            this.ClientSize = new System.Drawing.Size(595, 270);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -271,6 +318,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -291,11 +340,15 @@
         private System.Windows.Forms.ComboBox CmbHue1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label LblSch1;
-        private System.Windows.Forms.Button BtnSchOff1;
+        private System.Windows.Forms.Label LblSch2;
+        private System.Windows.Forms.Button BtnSchOff2;
         private System.Windows.Forms.Button BtnSchOn1;
+        private System.Windows.Forms.Button BtnSchOff1;
+        private System.Windows.Forms.Label LblSch1;
+        private System.Windows.Forms.Button BtnSchOn2;
+        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label4;
     }
 }
 

@@ -9,3 +9,14 @@ c:\users\sgies_000\documents\visual studio 2013\Projects\WindowsFormsApplication
 c:\users\sgies_000\documents\visual studio 2013\Projects\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\Newtonsoft.Json.xml
 c:\users\sgies_000\documents\visual studio 2013\Projects\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.exe
 c:\users\sgies_000\documents\visual studio 2013\Projects\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.pdb
+C:\Users\sgies_000\Documents\GitHub\Project-Inovate\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.exe.config
+C:\Users\sgies_000\Documents\GitHub\Project-Inovate\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.exe
+C:\Users\sgies_000\Documents\GitHub\Project-Inovate\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.pdb
+C:\Users\sgies_000\Documents\GitHub\Project-Inovate\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.csprojResolveAssemblyReference.cache
+C:\Users\sgies_000\Documents\GitHub\Project-Inovate\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Form1.resources
+C:\Users\sgies_000\Documents\GitHub\Project-Inovate\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Properties.Resources.resources
+C:\Users\sgies_000\Documents\GitHub\Project-Inovate\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.csproj.GenerateResource.Cache
+C:\Users\sgies_000\Documents\GitHub\Project-Inovate\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.exe
+C:\Users\sgies_000\Documents\GitHub\Project-Inovate\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.pdb
+C:\Users\sgies_000\Documents\GitHub\Project-Inovate\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\sgies_000\Documents\GitHub\Project-Inovate\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\Newtonsoft.Json.xml
