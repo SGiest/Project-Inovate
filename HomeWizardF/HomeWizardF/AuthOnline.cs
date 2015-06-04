@@ -19,7 +19,7 @@ namespace HomeWizardF
         public string version { get; set; }
         public string status { get; set; }
 
-        public static AuthOnline authOnline(string email, string pass)
+        public async Task<AuthOnline> authOnline(string email, string pass)
         {
             // Set vars
             string url = "https://cloud.homewizard.com/account/login";
@@ -27,7 +27,7 @@ namespace HomeWizardF
             //make WebRequest
             Uri myUri = new Uri(url);
             WebRequest myWebRequest = HttpWebRequest.Create(myUri);
-            HttpWebRequest myHttpWebRequest = (HttpWebRequest) myWebRequest;
+            
 
             //Hash Password and call .tolower() for use in URL
             string hashSha1 = Hash.GetSha1(pass);
@@ -35,18 +35,26 @@ namespace HomeWizardF
             //authInfo = Convert.ToBase64String(Encoding.Default.GetBytes(authInfo));
             authInfo = System.Convert.ToBase64String(Encoding.UTF8.GetBytes(authInfo));
             myWebRequest.Headers["Authorization"] = "Basic " + authInfo;
-            WebResponse myWebResponse = myWebRequest.GetResponse();
+
+            using (Stream reqStream = await myWebRequest.GetRequestStreamAsync())
+            {
+                byte[] xmlBytes = Encoding.UTF8.GetBytes(url);
+            }
+            WebResponse myWebResponse = await myWebRequest.GetResponseAsync();
+            using (StreamReader myStreamReader = new StreamReader(myWebResponse.GetResponseStream()))
+            {
+                string json = myStreamReader.ReadToEnd();
+                // convert JSON to C#
+                var auth = JsonConvert.DeserializeObject<AuthOnline>(json);
+
+                //Set JSON Data
+                return auth;
+            }
 
             // Create Reader for JSON Data
-            Stream responseStream = myWebResponse.GetResponseStream();
-            StreamReader myStreamReader = new StreamReader(responseStream, Encoding.UTF8);
-            string pageContent = myStreamReader.ReadToEnd();
-           
-            // convert JSON to C#
-            var discoveryHomeWizardOnline = JsonConvert.DeserializeObject<AuthOnline>(pageContent);
-
-            //Set JSON Data
-            return discoveryHomeWizardOnline;
+            //Stream responseStream = myWebResponse.GetResponseStream();
+            
+           // string pageContent = myStreamReader.ReadToEnd();
         }
     }
 }

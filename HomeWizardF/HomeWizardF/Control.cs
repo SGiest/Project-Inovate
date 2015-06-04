@@ -26,7 +26,7 @@ namespace HomeWizardF
             var responseStream = myWebResponse.GetResponseStream();
             var myStreamReader = new StreamReader(responseStream, Encoding.UTF8);
             var pageContent = myStreamReader.ReadToEnd();
-            Console.WriteLine(pageContent);
+            //Console.WriteLine(pageContent);
         }
 
         public static void controlHue(string Id, string Status, int Hue, int Sat, int Bri)
@@ -45,9 +45,9 @@ namespace HomeWizardF
             //Create Reader for Debugging
             var myWebResponse = myWebRequest.GetResponse();
             var responseStream = myWebResponse.GetResponseStream();
-            var myStreamReader = new StreamReader(responseStream, Encoding.Default);
+            var myStreamReader = new StreamReader(responseStream, Encoding.UTF8);
             var pageContent = myStreamReader.ReadToEnd();
-            Console.WriteLine(pageContent);
+            //Console.WriteLine(pageContent);
         }
     }
 }

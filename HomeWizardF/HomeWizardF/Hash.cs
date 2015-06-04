@@ -1,22 +1,19 @@
 ﻿using System.Text;
+using Windows.Security.Cryptography;
+using Windows.Security.Cryptography.Core;
+using Windows.Storage.Streams;
 
 namespace HomeWizardF
 {
     class Hash
     {
         public static string GetSha1(string value)
-        {   //Author Jeroen
+        {
+            HashAlgorithmProvider hashProvider = HashAlgorithmProvider.OpenAlgorithm(HashAlgorithmNames.Sha1);
+            IBuffer hash = hashProvider.HashData(CryptographicBuffer.ConvertStringToBinary(value, BinaryStringEncoding.Utf8));
+            string hashValue = CryptographicBuffer.EncodeToBase64String(hash);
 
-            //Hash the Password with SHA1
-            var data = Encoding.ASCII.GetBytes(value);
-            var hashData = new SHA1Managed().ComputeHash(data);
-       
-            var hash = string.Empty;
-
-            foreach (var b in hashData)
-                hash += b.ToString("X2");
-
-            return hash;
+            return hashValue;
         }
     }
 }

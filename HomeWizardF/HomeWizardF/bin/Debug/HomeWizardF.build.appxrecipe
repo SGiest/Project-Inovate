@@ -1,64 +1,67 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>FABIAN</Machine>
-    <WindowsUser>Fabian</WindowsUser>
+    <Machine>NOTEBOOK_SYTSKE</Machine>
+    <WindowsUser>sgies_000</WindowsUser>
     <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>fa437353-22ad-4164-a775-35b17f06d254</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\Fabian\Documents\GitHub\Innovate\HomeWizardF\HomeWizardF\obj\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\sgies_000\Documents\GitHub\Project-Inovate\HomeWizardF\HomeWizardF\obj\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Fabian\Documents\GitHub\Innovate\HomeWizardF\HomeWizardF\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\sgies_000\Documents\GitHub\Project-Inovate\HomeWizardF\HomeWizardF\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Fabian\Documents\GitHub\Innovate\HomeWizardF\HomeWizardF\bin\Debug\HomeWizardF.exe">
+    <AppxPackagedFile Include="C:\Users\sgies_000\Documents\GitHub\Project-Inovate\HomeWizardF\HomeWizardF\bin\Debug\HomeWizardF.exe">
       <PackagePath>HomeWizardF.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Fabian\Documents\GitHub\Innovate\HomeWizardF\HomeWizardF\Assets\Logo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\sgies_000\Documents\GitHub\Project-Inovate\HomeWizardF\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sgies_000\Documents\GitHub\Project-Inovate\HomeWizardF\HomeWizardF\Assets\Logo.scale-240.png">
       <PackagePath>Assets\Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Fabian\Documents\GitHub\Innovate\HomeWizardF\HomeWizardF\Assets\SmallLogo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\sgies_000\Documents\GitHub\Project-Inovate\HomeWizardF\HomeWizardF\Assets\SmallLogo.scale-240.png">
       <PackagePath>Assets\SmallLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Fabian\Documents\GitHub\Innovate\HomeWizardF\HomeWizardF\Assets\SplashScreen.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\sgies_000\Documents\GitHub\Project-Inovate\HomeWizardF\HomeWizardF\Assets\SplashScreen.scale-240.png">
       <PackagePath>Assets\SplashScreen.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Fabian\Documents\GitHub\Innovate\HomeWizardF\HomeWizardF\Assets\Square71x71Logo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\sgies_000\Documents\GitHub\Project-Inovate\HomeWizardF\HomeWizardF\Assets\Square71x71Logo.scale-240.png">
       <PackagePath>Assets\Square71x71Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Fabian\Documents\GitHub\Innovate\HomeWizardF\HomeWizardF\Assets\StoreLogo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\sgies_000\Documents\GitHub\Project-Inovate\HomeWizardF\HomeWizardF\Assets\StoreLogo.scale-240.png">
       <PackagePath>Assets\StoreLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Fabian\Documents\GitHub\Innovate\HomeWizardF\HomeWizardF\Assets\WideLogo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\sgies_000\Documents\GitHub\Project-Inovate\HomeWizardF\HomeWizardF\Assets\WideLogo.scale-240.png">
       <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Fabian\Documents\GitHub\Innovate\HomeWizardF\HomeWizardF\Logo Homeremote.png">
+    <AppxPackagedFile Include="C:\Users\sgies_000\Documents\GitHub\Project-Inovate\HomeWizardF\HomeWizardF\Logo Homeremote.png">
       <PackagePath>Logo Homeremote.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Fabian\Documents\GitHub\Innovate\HomeWizardF\HomeWizardF\bin\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\sgies_000\Documents\GitHub\Project-Inovate\HomeWizardF\HomeWizardF\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Fabian\Documents\GitHub\Innovate\HomeWizardF\HomeWizardF\bin\Debug\Login.xbf">
+    <AppxPackagedFile Include="C:\Users\sgies_000\Documents\GitHub\Project-Inovate\HomeWizardF\HomeWizardF\bin\Debug\Login.xbf">
       <PackagePath>Login.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Fabian\Documents\GitHub\Innovate\HomeWizardF\HomeWizardF\bin\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\sgies_000\Documents\GitHub\Project-Inovate\HomeWizardF\HomeWizardF\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Fabian\Documents\GitHub\Innovate\HomeWizardF\HomeWizardF\bin\Debug\HomeWizardF.xr.xml">
+    <AppxPackagedFile Include="C:\Users\sgies_000\Documents\GitHub\Project-Inovate\HomeWizardF\HomeWizardF\bin\Debug\HomeWizardF.xr.xml">
       <PackagePath>HomeWizardF.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Fabian\Documents\GitHub\Innovate\HomeWizardF\HomeWizardF\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\sgies_000\Documents\GitHub\Project-Inovate\HomeWizardF\HomeWizardF\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
