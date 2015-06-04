@@ -115,7 +115,7 @@ namespace HomeWizardF
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            //Background = new SolidColorBrush(Windows.UI.Colors.Red);
+            AuthOnline auth = AuthOnline.authOnline(TextBox, PasswordBox);
         }
     }
 }

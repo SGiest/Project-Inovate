@@ -19,7 +19,7 @@ namespace HomeWizardF
         public string version { get; set; }
         public string status { get; set; }
 
-        public async Task<AuthOnline> authOnline(string email, string pass)
+        public async static Task<AuthOnline> authOnline(Windows.UI.Xaml.Controls.TextBox TextBox, Windows.UI.Xaml.Controls.PasswordBox PasswordBox)
         {
             // Set vars
             string url = "https://cloud.homewizard.com/account/login";
@@ -30,8 +30,8 @@ namespace HomeWizardF
             
 
             //Hash Password and call .tolower() for use in URL
-            string hashSha1 = Hash.GetSha1(pass);
-            string authInfo = email + ":" + hashSha1.ToLower();
+            string hashSha1 = Hash.GetSha1(PasswordBox);
+            string authInfo = TextBox + ":" + hashSha1.ToLower();
             //authInfo = Convert.ToBase64String(Encoding.Default.GetBytes(authInfo));
             authInfo = System.Convert.ToBase64String(Encoding.UTF8.GetBytes(authInfo));
             myWebRequest.Headers["Authorization"] = "Basic " + authInfo;
