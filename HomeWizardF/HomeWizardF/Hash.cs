@@ -1,7 +1,6 @@
-﻿using System.Security.Cryptography;
-using System.Text;
+﻿using System.Text;
 
-namespace WindowsFormsApplication2
+namespace HomeWizardF
 {
     class Hash
     {

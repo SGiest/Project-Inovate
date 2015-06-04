@@ -5,10 +5,9 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using Newtonsoft.Json;
 
-namespace WindowsFormsApplication2
+namespace HomeWizardF
 {
     public class AuthOnline
     {   //Author Jeroen
@@ -34,15 +33,14 @@ namespace WindowsFormsApplication2
             string hashSha1 = Hash.GetSha1(pass);
             string authInfo = email + ":" + hashSha1.ToLower();
             //authInfo = Convert.ToBase64String(Encoding.Default.GetBytes(authInfo));
-            authInfo = System.Convert.ToBase64String(Encoding.Default.GetBytes(authInfo));
+            authInfo = System.Convert.ToBase64String(Encoding.UTF8.GetBytes(authInfo));
             myWebRequest.Headers["Authorization"] = "Basic " + authInfo;
             WebResponse myWebResponse = myWebRequest.GetResponse();
 
             // Create Reader for JSON Data
             Stream responseStream = myWebResponse.GetResponseStream();
-            StreamReader myStreamReader = new StreamReader(responseStream, Encoding.Default);
+            StreamReader myStreamReader = new StreamReader(responseStream, Encoding.UTF8);
             string pageContent = myStreamReader.ReadToEnd();
-            Console.WriteLine(pageContent);
            
             // convert JSON to C#
             var discoveryHomeWizardOnline = JsonConvert.DeserializeObject<AuthOnline>(pageContent);

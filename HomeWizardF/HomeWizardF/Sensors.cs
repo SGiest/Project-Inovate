@@ -4,7 +4,7 @@ using System.Net;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace WindowsFormsApplication2
+namespace HomeWizardF
 {
     public class Sensors
     {   //Author Sieger
@@ -31,9 +31,8 @@ namespace WindowsFormsApplication2
                 //Create Reader for JSON DATA
                 var myWebResponse = myWebRequest.GetResponse();
                 var responseStream = myWebResponse.GetResponseStream();
-                var myStreamReader = new StreamReader(responseStream, Encoding.Default);
+                var myStreamReader = new StreamReader(responseStream, Encoding.UTF8);
                 var pageContent = myStreamReader.ReadToEnd();
-                Console.WriteLine(pageContent);
                 
                 // convert JSON to C#
                 var sensor = JsonConvert.DeserializeObject<Sensors>(pageContent);

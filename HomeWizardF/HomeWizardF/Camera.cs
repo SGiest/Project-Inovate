@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WindowsFormsApplication2
+namespace HomeWizardF
 {
     public class Camera
     {   //Author Sieger

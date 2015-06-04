@@ -3,7 +3,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 
-namespace WindowsFormsApplication2
+namespace HomeWizardF
 {
     public class Control
     {
@@ -24,7 +24,7 @@ namespace WindowsFormsApplication2
             //Create Reader for Debugging
             var myWebResponse = myWebRequest.GetResponse();
             var responseStream = myWebResponse.GetResponseStream();
-            var myStreamReader = new StreamReader(responseStream, Encoding.Default);
+            var myStreamReader = new StreamReader(responseStream, Encoding.UTF8);
             var pageContent = myStreamReader.ReadToEnd();
             Console.WriteLine(pageContent);
         }

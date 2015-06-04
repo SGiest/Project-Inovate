@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace WindowsFormsApplication2
+namespace HomeWizardF
 {
     class TempGraph
     {
@@ -30,10 +28,9 @@ namespace WindowsFormsApplication2
 
             //Create Reader for JSON DATA
             var myWebResponse = myWebRequest.GetResponse();
-            var responseStream = myWebResponse.GetResponseStream();
-            var myStreamReader = new StreamReader(responseStream, Encoding.Default);
+            var responseStream = myWebResponse.GetResponseStream;
+            var myStreamReader = new StreamReader(responseStream, Encoding.UTF8);
             var pageContent = myStreamReader.ReadToEnd();
-            Console.WriteLine(pageContent);
 
             // convert JSON to C#
             var graph = JsonConvert.DeserializeObject<TempGraph>(pageContent);

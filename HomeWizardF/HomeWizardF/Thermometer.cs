@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication2
+﻿namespace HomeWizardF
 {
     public class Thermometer
     {   //Author: Sieger
