@@ -19,7 +19,7 @@ namespace HomeWizardF
         public string version { get; set; }
         public string status { get; set; }
 
-        public async static Task<AuthOnline> authOnline(Windows.UI.Xaml.Controls.TextBox TextBox, Windows.UI.Xaml.Controls.PasswordBox PasswordBox)
+        public static async Task<AuthOnline> authOnline(string email, string pass)
         {
             // Set vars
             string url = "https://cloud.homewizard.com/account/login";
@@ -30,16 +30,16 @@ namespace HomeWizardF
             
 
             //Hash Password and call .tolower() for use in URL
-            string hashSha1 = Hash.GetSha1(PasswordBox);
-            string authInfo = TextBox + ":" + hashSha1.ToLower();
+            string hashSha1 = Hash.GetSha1(pass);
+            string authInfo = email + ":" + hashSha1.ToLower();
             //authInfo = Convert.ToBase64String(Encoding.Default.GetBytes(authInfo));
             authInfo = System.Convert.ToBase64String(Encoding.UTF8.GetBytes(authInfo));
             myWebRequest.Headers["Authorization"] = "Basic " + authInfo;
 
-            using (Stream reqStream = await myWebRequest.GetRequestStreamAsync())
-            {
-                byte[] xmlBytes = Encoding.UTF8.GetBytes(url);
-            }
+            //using (Stream reqStream = await myWebRequest.GetRequestStreamAsync())
+            //{
+            //    byte[] xmlBytes = Encoding.UTF8.GetBytes(url);
+            //}
             WebResponse myWebResponse = await myWebRequest.GetResponseAsync();
             using (StreamReader myStreamReader = new StreamReader(myWebResponse.GetResponseStream()))
             {
@@ -50,11 +50,6 @@ namespace HomeWizardF
                 //Set JSON Data
                 return auth;
             }
-
-            // Create Reader for JSON Data
-            //Stream responseStream = myWebResponse.GetResponseStream();
-            
-           // string pageContent = myStreamReader.ReadToEnd();
         }
     }
 }

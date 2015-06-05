@@ -2,6 +2,7 @@
 using System.IO;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace HomeWizardF
@@ -16,9 +17,9 @@ namespace HomeWizardF
         public static string Session { get; set; }
         public static string Serial { get; set; }
 
-        public static Sensors sensorlist()
+        public static async Task<Sensors> sensorlist()
         {       //Author: Sieger
-                //Set vars
+            //Set vars
                 var url = "https://cloud.homewizard.com/forward/";
                 var session = Session;
                 var serial = Serial;
@@ -28,17 +29,14 @@ namespace HomeWizardF
                 var myWebRequest = WebRequest.Create(myUri + session + "/" + serial + "/get-sensors");
                 var myHttpWebRequest = (HttpWebRequest) myWebRequest;
 
-                //Create Reader for JSON DATA
-                var myWebResponse = myWebRequest.GetResponse();
-                var responseStream = myWebResponse.GetResponseStream();
-                var myStreamReader = new StreamReader(responseStream, Encoding.UTF8);
-                var pageContent = myStreamReader.ReadToEnd();
-                
-                // convert JSON to C#
-                var sensor = JsonConvert.DeserializeObject<Sensors>(pageContent);
-
-                //Set JSON Data
-                return sensor;
+                WebResponse myWebResponse = await myWebRequest.GetResponseAsync();
+                using (StreamReader myStreamReader = new StreamReader(myWebResponse.GetResponseStream()))
+                {
+                    string json = myStreamReader.ReadToEnd();
+                    // convert JSON to C#
+                    var sensors = JsonConvert.DeserializeObject<Sensors>(json);
+                    return sensors;
+                }
             
         }
     }

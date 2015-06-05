@@ -13,7 +13,7 @@ namespace HomeWizardF
         public string version { get; set; }
         public List<Graph> response { get; set; }
 
-        public static TempGraph tempGraph(string Id, string Period )
+        public static async void tempGraph(string Id, string Period )
         {
             //Author: Sieger
             //Set vars
@@ -26,17 +26,13 @@ namespace HomeWizardF
             var myWebRequest = WebRequest.Create(myUri + session + "/" + serial + "/te/graph" + Id + "/" + Period);
             var myHttpWebRequest = (HttpWebRequest)myWebRequest;
 
-            //Create Reader for JSON DATA
-            var myWebResponse = myWebRequest.GetResponse();
-            var responseStream = myWebResponse.GetResponseStream;
-            var myStreamReader = new StreamReader(responseStream, Encoding.UTF8);
-            var pageContent = myStreamReader.ReadToEnd();
-
-            // convert JSON to C#
-            var graph = JsonConvert.DeserializeObject<TempGraph>(pageContent);
-
-            //Set JSON Data
-            return graph;
+            WebResponse myWebResponse = await myWebRequest.GetResponseAsync();
+            using (StreamReader myStreamReader = new StreamReader(myWebResponse.GetResponseStream()))
+            {
+                string json = myStreamReader.ReadToEnd();
+                // convert JSON to C#
+                var grahp = JsonConvert.DeserializeObject<Discover>(json);
+            }
         }
     }
 }

@@ -124,33 +124,31 @@ namespace HomeWizardF.HomeWizardF_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[12];
-            _typeNameTable[0] = "HomeWizardF.ContentDialog1";
-            _typeNameTable[1] = "Windows.UI.Xaml.Controls.ContentDialog";
-            _typeNameTable[2] = "Windows.UI.Xaml.Controls.ContentControl";
+            _typeNameTable = new string[11];
+            _typeNameTable[0] = "Windows.UI.Text.FontWeight";
+            _typeNameTable[1] = "System.ValueType";
+            _typeNameTable[2] = "Object";
             _typeNameTable[3] = "HomeWizardF.Login";
             _typeNameTable[4] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[5] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[6] = "HomeWizardF.Common.NavigationHelper";
             _typeNameTable[7] = "Windows.UI.Xaml.DependencyObject";
             _typeNameTable[8] = "HomeWizardF.Common.ObservableDictionary";
-            _typeNameTable[9] = "Object";
-            _typeNameTable[10] = "String";
-            _typeNameTable[11] = "HomeWizardF.MainPage";
+            _typeNameTable[9] = "String";
+            _typeNameTable[10] = "HomeWizardF.MainPage";
 
-            _typeTable = new global::System.Type[12];
-            _typeTable[0] = typeof(global::HomeWizardF.ContentDialog1);
-            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.ContentDialog);
-            _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.ContentControl);
+            _typeTable = new global::System.Type[11];
+            _typeTable[0] = typeof(global::Windows.UI.Text.FontWeight);
+            _typeTable[1] = typeof(global::System.ValueType);
+            _typeTable[2] = typeof(global::System.Object);
             _typeTable[3] = typeof(global::HomeWizardF.Login);
             _typeTable[4] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[5] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[6] = typeof(global::HomeWizardF.Common.NavigationHelper);
             _typeTable[7] = typeof(global::Windows.UI.Xaml.DependencyObject);
             _typeTable[8] = typeof(global::HomeWizardF.Common.ObservableDictionary);
-            _typeTable[9] = typeof(global::System.Object);
-            _typeTable[10] = typeof(global::System.String);
-            _typeTable[11] = typeof(global::HomeWizardF.MainPage);
+            _typeTable[9] = typeof(global::System.String);
+            _typeTable[10] = typeof(global::HomeWizardF.MainPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -185,10 +183,9 @@ namespace HomeWizardF.HomeWizardF_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_ContentDialog1() { return new global::HomeWizardF.ContentDialog1(); }
         private object Activate_3_Login() { return new global::HomeWizardF.Login(); }
         private object Activate_8_ObservableDictionary() { return new global::HomeWizardF.Common.ObservableDictionary(); }
-        private object Activate_11_MainPage() { return new global::HomeWizardF.MainPage(); }
+        private object Activate_10_MainPage() { return new global::HomeWizardF.MainPage(); }
         private void MapAdd_8_ObservableDictionary(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
@@ -207,18 +204,17 @@ namespace HomeWizardF.HomeWizardF_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  HomeWizardF.ContentDialog1
-                userType = new global::HomeWizardF.HomeWizardF_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentDialog"));
-                userType.Activator = Activate_0_ContentDialog1;
-                userType.SetIsLocalType();
+            case 0:   //  Windows.UI.Text.FontWeight
+                userType = new global::HomeWizardF.HomeWizardF_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 xamlType = userType;
                 break;
 
-            case 1:   //  Windows.UI.Xaml.Controls.ContentDialog
-                xamlType = new global::HomeWizardF.HomeWizardF_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+            case 1:   //  System.ValueType
+                userType = new global::HomeWizardF.HomeWizardF_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                xamlType = userType;
                 break;
 
-            case 2:   //  Windows.UI.Xaml.Controls.ContentControl
+            case 2:   //  Object
                 xamlType = new global::HomeWizardF.HomeWizardF_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
@@ -258,17 +254,13 @@ namespace HomeWizardF.HomeWizardF_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 9:   //  Object
+            case 9:   //  String
                 xamlType = new global::HomeWizardF.HomeWizardF_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 10:   //  String
-                xamlType = new global::HomeWizardF.HomeWizardF_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 11:   //  HomeWizardF.MainPage
+            case 10:   //  HomeWizardF.MainPage
                 userType = new global::HomeWizardF.HomeWizardF_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_11_MainPage;
+                userType.Activator = Activate_10_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

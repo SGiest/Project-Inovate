@@ -9,13 +9,13 @@ namespace WindowsFormsApplication2
         {   //Author Jeroen
 
             //Hash the Password with SHA1
-            var data = Encoding.ASCII.GetBytes(value);
+            var data = Encoding.UTF8.GetBytes(value);
             var hashData = new SHA1Managed().ComputeHash(data);
        
             var hash = string.Empty;
 
             foreach (var b in hashData)
-                hash += b.ToString("X2");
+               hash += b.ToString("X2");
 
             return hash;
         }

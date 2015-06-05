@@ -2,34 +2,35 @@
 using System.IO;
 using System.Net;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace HomeWizardF
 {
     public class Control
     {
-        public static void controlSchakelaar(string Id, string Status)
+        public static async void controlSchakelaar(string Id, string Status)
         {   //Author Sieger
-            
-            // set vars
+            // Set vars
             var url = "https://cloud.homewizard.com/forward/";
             string session = Sensors.Session;
             string serial = Sensors.Serial;
-            
-            // Creaste WebRequest
+
+            //make WebRequest
             var myUri = new Uri(url);
             var myWebRequest =
                 WebRequest.Create(myUri + session + "/" + serial + "/sw/" + Id + "/" + Status + "/" );
             var myHttpWebRequest = (HttpWebRequest)myWebRequest;
 
-            //Create Reader for Debugging
-            var myWebResponse = myWebRequest.GetResponse();
-            var responseStream = myWebResponse.GetResponseStream();
-            var myStreamReader = new StreamReader(responseStream, Encoding.UTF8);
-            var pageContent = myStreamReader.ReadToEnd();
-            //Console.WriteLine(pageContent);
+            WebResponse myWebResponse = await myWebRequest.GetResponseAsync();
+            using (StreamReader myStreamReader = new StreamReader(myWebResponse.GetResponseStream()))
+            {
+                string json = myStreamReader.ReadToEnd();
+                // convert JSON to C#
+                var discover = JsonConvert.DeserializeObject<Discover>(json);
+            }
         }
 
-        public static void controlHue(string Id, string Status, int Hue, int Sat, int Bri)
+        public static async void controlHue(string Id, string Status, int Hue, int Sat, int Bri)
         {   //Author: Sieger
             
             // set vars
@@ -42,12 +43,13 @@ namespace HomeWizardF
             var myWebRequest = WebRequest.Create(myUri + session + "/" + serial + "/sw/" + Id + "/" + Status + "/" + Hue + "/" + Sat +"/" + Bri + "/");
             var myHttpWebRequest = (HttpWebRequest)myWebRequest;
 
-            //Create Reader for Debugging
-            var myWebResponse = myWebRequest.GetResponse();
-            var responseStream = myWebResponse.GetResponseStream();
-            var myStreamReader = new StreamReader(responseStream, Encoding.UTF8);
-            var pageContent = myStreamReader.ReadToEnd();
-            //Console.WriteLine(pageContent);
+            WebResponse myWebResponse = await myWebRequest.GetResponseAsync();
+            using (StreamReader myStreamReader = new StreamReader(myWebResponse.GetResponseStream()))
+            {
+                string json = myStreamReader.ReadToEnd();
+                // convert JSON to C#
+                var discover = JsonConvert.DeserializeObject<Discover>(json);
+            }
         }
     }
 }

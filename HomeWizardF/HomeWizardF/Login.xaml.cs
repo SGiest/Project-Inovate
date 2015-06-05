@@ -115,7 +115,7 @@ namespace HomeWizardF
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            AuthOnline auth = AuthOnline.authOnline(TextBox, PasswordBox);
+           AuthOnline.authOnline("sieger.van.der.iest@student.stenden.com", "Innovate");
         }
     }
 }
